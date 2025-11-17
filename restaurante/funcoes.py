@@ -9,3 +9,30 @@ def carregar_cardapio():
 {"id": 5, "nome": "Bolo Caprese", "preco": 200},
 {"id": 6, "nome": "Panna Cotta", "preco": 55}
 ]
+
+def exibir_cardapio(cardapio):
+    print(tabulate(cardapio, headers='keys', tablefmt='fancy_gate'))
+    
+
+def adicionar_pedido(cardapio, pedidos):
+    item = int(input("Digite o id do item: ")) .strip() 
+    qtd = int(input("Quantas unidades você deseja: ")) .strip()
+    total = cardapio[id]['preco'] * qtd
+    pedido = {
+        "item": item,
+        "qtd": qtd,
+        "total": total
+    }
+    pedidos.append(pedido)
+    return pedidos
+
+
+def exibir_pedido(pedidos):
+    print(tabulate(pedidos, headers='keys', tablefmt='fancy_gate'))
+    st = sum([pedido['total'] for pedido in pedidos])
+
+def remover_item(pedidos):
+    remover = int(input("Digite o id do item que você quer remover: "))
+    for i in pedidos:
+        if remover == i['item']:
+          pedidos.remove('remover')
