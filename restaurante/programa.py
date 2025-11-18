@@ -1,5 +1,13 @@
 from funcoes import *
 
+cardapio = [
+{"id": 1, "nome": "Gelato", "preco": 12.5},
+{"id": 2, "nome": "Cannoli", "preco": 40},
+{"id": 3, "nome": "Tiramisù", "preco": 159},
+{"id": 4, "nome": "Bombolone", "preco": 70},
+{"id": 5, "nome": "Bolo Caprese", "preco": 200},
+{"id": 6, "nome": "Panna Cotta", "preco": 55}
+]
 
 lista = []
 while True:
@@ -19,17 +27,12 @@ Menu:
         case '1':
             exibir_cardapio(cardapio)
         case '2':
-            exibir(lista)
+            adicionar_pedido(cardapio, lista)
         case '3':
-            buscar(lista)
+           exibir_pedido(lista)
         case '4':
-            mais_cara(lista)
-        case '5':
-            med = media(lista)
-            print(f'Média de consumo: {med}')
+            remover_item(lista)
         case '0':
             break
         case _:
             print('Opção inválida.')
-    
-
